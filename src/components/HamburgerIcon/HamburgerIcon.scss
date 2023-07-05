@@ -1,0 +1,12 @@
+.hamburger-icon__bar {
+	transition: all 0.5s ease;
+	&--top--active {
+		transform: translateY(200%) rotate(45deg);
+	}
+	&--middle--active {
+		opacity: 0;
+	}
+	&--bottom--active {
+		transform: translateY(-240%) rotate(-45deg);
+	}
+}

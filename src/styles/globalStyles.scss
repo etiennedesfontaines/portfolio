@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	color: #333;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Playfair Display", serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04rem;
+}
+
+h1 {
+	font-size: 2.4rem;
+	font-weight: 700;
+	letter-spacing: 0.048rem;
+	color: #02549d;
+}
+h2 {
+	font-family: Playfair Display;
+	font-size: 2rem;
+	letter-spacing: 0.04rem;
+}
+h3 {
+	font-size: 1.6rem;
+}
+h4 {
+	font-size: 1.4rem;
+}
+
+p {
+	font-family: Montserrat;
+	font-size: 1.2rem;
+	font-weight: 300;
+	text-align: center;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.2rem;
+	color: #333;
+}
