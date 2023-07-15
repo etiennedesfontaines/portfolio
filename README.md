@@ -68,3 +68,82 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+//unused code snippets to refer to:
+
+//1. NavSignifiers
+
+// const [activeSection, setActiveSection] = useState(
+// isMobile ? "home" : "about"
+// );
+// const [navSignifiers, setNavSignifiers] = useState({
+// home: false,
+// about: false,
+// skills: false,
+// projects: false,
+// testimonials: false,
+// contact: false,
+// });
+
+    // //functions:
+    // const handleNavSignifierOnScroll = () => {
+    // 	const scrollPosition = window.scrollY + 100;
+    // 	const sections = [
+    // 		"home",
+    // 		"about",
+    // 		"skills",
+    // 		"projects",
+    // 		"testimonials",
+    // 		"contact",
+    // 	];
+
+    // 	const active = sections.find((section) => {
+    // 		const element = document.querySelector(`#${section}`);
+
+    // 		if (element) {
+    // 			const { offsetTop, offsetHeight } = element;
+    // 			return (
+    // 				scrollPosition >= offsetTop &&
+    // 				scrollPosition < offsetTop + offsetHeight
+    // 			);
+    // 		}
+    // 		return false;
+    // 	});
+
+    // 	setActiveSection(active);
+
+    // 	const updatedNaveSignifiers = sections.reduce((obj, section) => {
+    // 		obj[section] = section === active;
+    // 		return obj;
+    // 	}, {});
+
+    // 	setNavSignifiers(updatedNaveSignifiers);
+    // };
+
+//2. IsMobile change of width and orientation:
+
+    useEffect(() => {
+    	const mediaQuery = window.matchMedia("(max-width: 767px)");
+    	const handleResize = () => {
+    		setIsMobile(mediaQuery.matches);
+    	};
+
+    	// const handleOrientationChange = () => {
+    	// 	// Delay the execution to allow time for the window dimensions to update
+    	// 	setTimeout(() => {
+    	// 		setIsMobile(
+    	// 			window.innerWidth <= 767 ||
+    	// 				(window.innerWidth > 767 && window.innerHeight <= 767)
+    	// 		);
+    	// 	}, 100);
+    	// };
+
+    	// Add the event listeners
+    	window.addEventListener("resize", handleResize);
+    	// window.addEventListener("orientationchange", handleOrientationChange);
+    	// Clean up the event listeners on component unmount
+    	return () => {
+    		window.removeEventListener("resize", handleResize);
+    		// window.removeEventListener("orientationchange", handleOrientationChange);
+    	};
+    }, []);

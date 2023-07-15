@@ -1,33 +1,103 @@
 import React from "react";
 import styled from "styled-components";
 
-const HamburgerMenu = ({ burgerMenuIsActive, setBurgerMenuIsActive }) => {
+//components
+import LayoutColumn from "./LayoutColumn";
+
+//styles
+import { colours } from "../styles/styleVariables";
+
+const HamburgerMenu = ({
+	burgerMenuIsActive,
+	setBurgerMenuIsActive,
+	activeSection,
+}) => {
+	const handleDocumentScroll = (event, targetId) => {
+		event.preventDefault();
+		setBurgerMenuIsActive(false);
+
+		const targetElement = document.querySelector(targetId);
+		if (targetElement) {
+			const navHeight = window.innerHeight * 0.1;
+			const targetOffset = targetElement.offsetTop - navHeight;
+			setTimeout(() => {
+				window.scrollTo({ top: targetOffset, behavior: "smooth" });
+			}, 400);
+		}
+	};
+
 	return (
-		<NavLinks burgerMenuIsActive={burgerMenuIsActive}>
-			<li>
-				<a href="#home">Home</a>
-				<div className="line"></div>
-			</li>
-			<li>
-				<a href="#about">About</a>
-				<div className="line"></div>
-			</li>
-			<li>
-				<a href="#skills">Skills</a>
-				<div className="line"></div>
-			</li>
-			<li>
-				<a href="#projects">Projects</a>
-				<div className="line"></div>
-			</li>
-			<li>
-				<a href="#testimonials">Testimonials</a>
-				<div className="line"></div>
-			</li>
-			<li>
-				<a href="#contact">Contact</a>
-				<div className="line"></div>
-			</li>
+		<NavLinks
+			burgerMenuIsActive={burgerMenuIsActive}
+			activeSection={activeSection}
+		>
+			<LayoutColumn>
+				<li>
+					<a onClick={(e) => handleDocumentScroll(e, "#home")} href="#home">
+						Home
+					</a>
+					<div
+						className={activeSection === "home" ? "line line--active" : "line"}
+					></div>
+				</li>
+				<li>
+					<a onClick={(e) => handleDocumentScroll(e, "#about")} href="#about">
+						About
+					</a>
+					<div
+						className={activeSection === "about" ? "line line--active" : "line"}
+					></div>
+				</li>
+				<li>
+					<a onClick={(e) => handleDocumentScroll(e, "#skills")} href="#skills">
+						Skills
+					</a>
+					<div
+						className={
+							activeSection === "skills" ? "line line--active" : "line"
+						}
+					></div>
+				</li>
+				<li>
+					<a
+						onClick={(e) => handleDocumentScroll(e, "#projects")}
+						href="#projects"
+					>
+						Projects
+					</a>
+					<div
+						className={
+							activeSection === "projects" ? "line line--active" : "line"
+						}
+					></div>
+				</li>
+				<li>
+					<a
+						onClick={(e) => handleDocumentScroll(e, "#testimonials")}
+						href="#testimonials"
+					>
+						Testimonials
+					</a>
+					<div
+						className={
+							activeSection === "testimonials" ? "line line--active" : "line"
+						}
+					></div>
+				</li>
+				<li>
+					<a
+						onClick={(e) => handleDocumentScroll(e, "#contact")}
+						href="#contact"
+					>
+						Contact
+					</a>
+					<div
+						className={
+							activeSection === "contact" ? "line line--active" : "line"
+						}
+					></div>
+				</li>
+			</LayoutColumn>
 		</NavLinks>
 	);
 };
@@ -37,9 +107,8 @@ const NavLinks = styled.ul`
 	inset: 0;
 	height: 90vh;
 	padding: 1.6rem 0.8rem;
-	display: flex;
-	flex-direction: column;
-	background-color: white;
+	padding: 0 0.8rem;
+	background-color: ${colours.white};
 	transform: translateX(
 		${(props) => (props.burgerMenuIsActive ? "0" : "-100%")}
 	);
@@ -56,8 +125,11 @@ const NavLinks = styled.ul`
 	.line {
 		width: 100%;
 		height: 0.1rem;
-		background-color: #333;
+		background-color: ${colours.textColour};
 		margin-top: 0.4rem;
+	}
+	.line--active {
+		background-color: ${colours.secondaryColour};
 	}
 `;
 

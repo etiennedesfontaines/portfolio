@@ -1,56 +1,46 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
 
 //components
-import HamburgerIcon from "./HamburgerIcon/HamburgerIcon";
-import HamburgerMenu from "./HamburgerMenu";
+import NavMobile from "./NavMobile";
+import NavDesktop from "./NavDesktop";
 
 const NavBar = ({ isMobile, burgerMenuIsActive, setBurgerMenuIsActive }) => {
+	const [activeSection, setActiveSection] = useState(
+		isMobile ? "home" : "about"
+	);
+
+	useEffect(() => {
+		const sections = document.querySelectorAll(".section");
+		const observer = new IntersectionObserver(
+			(entries) => {
+				console.log(entries);
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						// console.log(entry.target.id);
+						setActiveSection(entry.target.id);
+					}
+				});
+			},
+			{ threshold: 0.25, rootMargin: "0px 0px 0px 0px" }
+		);
+
+		sections.forEach((section) => {
+			observer.observe(section);
+		});
+	});
 	return (
-		<NavContainer>
-			<StyledNavBar>
-				<img src="#" alt="Logo" className="logo" />
-				<HamburgerIcon
+		<>
+			{isMobile ? (
+				<NavMobile
 					burgerMenuIsActive={burgerMenuIsActive}
 					setBurgerMenuIsActive={setBurgerMenuIsActive}
+					activeSection={activeSection}
 				/>
-			</StyledNavBar>
-			<Nav>
-				<HamburgerMenu
-					burgerMenuIsActive={burgerMenuIsActive}
-					setBurgerMenuIsActive={setBurgerMenuIsActive}
-				/>
-			</Nav>
-		</NavContainer>
+			) : (
+				<NavDesktop activeSection={activeSection} />
+			)}
+		</>
 	);
 };
-
-const NavContainer = styled.div`
-	position: sticky;
-	min-height: 10vh;
-	inset: 0;
-	z-index: 10;
-`;
-
-const StyledNavBar = styled.div`
-	position: fixed;
-	inset: 0;
-	height: 10vh;
-	background-color: white;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 0.8rem;
-	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
-		0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
-	z-index: 10;
-`;
-
-const Nav = styled.nav`
-	position: absolute;
-	top: 10vh;
-	left: 0;
-	right: 0;
-`;
 
 export default NavBar;

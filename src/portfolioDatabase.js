@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 //Technology Icons:
 import htmlIcon from "./icons/html-icon.svg";
 import cssIcon from "./icons/css-icon.svg";
@@ -23,9 +21,10 @@ import twitterIcon from "./icons/twitter-icon.svg";
 
 //Images:
 import twoAngelsImage from "./images/two-agnels.jpg";
+import memoryImage from "./images/memory.jpg";
 import danProfileImage from "./images/tetimonials-profile-placeholder.jpg";
 
-export const technologyIcons = [
+export const skillIcons = [
 	{ iconImage: htmlIcon, name: "HTML5" },
 	{ iconImage: cssIcon, name: "CSS" },
 	{ iconImage: javascriptIcon, name: "Javascript" },
@@ -33,19 +32,27 @@ export const technologyIcons = [
 	{ iconImage: gitIcon, name: "Git" },
 	{ iconImage: jQueryIcon, name: "jQuery" },
 	{ iconImage: cliIcon, name: "Cli" },
-	{ iconImage: framerMotionIcon, name: "Framer Motion" },
-	{ iconImage: sassIcon, name: "Sass" },
-	{ iconImage: apiIcon, name: "Api" },
-	{ iconImage: figmaIcon, name: "Figma" },
-	{ iconImage: styledComponentsIcon, name: "Styled Components" },
+	{
+		iconImage: framerMotionIcon,
+		name: "Framer Motion",
+		className: "skillIcon",
+	},
+	{ iconImage: sassIcon, name: "Sass", className: "skillIcon" },
+	{ iconImage: apiIcon, name: "Api", className: "skillIcon" },
+	{ iconImage: figmaIcon, name: "Figma", className: "skillIcon" },
+	{
+		iconImage: styledComponentsIcon,
+		name: "Styled Components",
+		className: "skillIcon",
+	},
 ];
 
 export const socialIcons = [
-	{ iconImage: linkdInIcon },
-	{ iconImage: gitHubIcon },
-	{ iconImage: exercismIcon },
-	{ iconImage: frontedMentoreIcon },
-	{ iconImage: twitterIcon },
+	{ iconImage: linkdInIcon, link: "" },
+	{ iconImage: gitHubIcon, link: "" },
+	{ iconImage: exercismIcon, link: "" },
+	{ iconImage: frontedMentoreIcon, link: "" },
+	{ iconImage: twitterIcon, link: "" },
 ];
 
 export const projects = [
@@ -67,9 +74,49 @@ export const projects = [
 			"https://twoangels.co.za/",
 		],
 	},
+	{
+		title: "Memory",
+		image: memoryImage,
+		description:
+			"Lorem ipsum dolor sit amet consectetur. Fames in hac dictumst commodo velit a cras sapien ante. Purus sodales id non tincidunt amet. A tortor consequat viverra ut vel. Lacinia sed ut libero integer.",
+		technologies: [
+			{ iconImage: htmlIcon, name: "HTML5" },
+			{ iconImage: cssIcon, name: "CSS" },
+			{ iconImage: sassIcon, name: "Sass" },
+			{ iconImage: javascriptIcon, name: "Javascript" },
+		],
+		links: ["#", "#"],
+	},
+	{
+		title: "Memory",
+		image: memoryImage,
+		description:
+			"Lorem ipsum dolor sit amet consectetur. Fames in hac dictumst commodo velit a cras sapien ante. Purus sodales id non tincidunt amet. A tortor consequat viverra ut vel. Lacinia sed ut libero integer.",
+		technologies: [
+			{ iconImage: htmlIcon, name: "HTML5" },
+			{ iconImage: cssIcon, name: "CSS" },
+			{ iconImage: sassIcon, name: "Sass" },
+			{ iconImage: javascriptIcon, name: "Javascript" },
+		],
+		links: ["#", "#"],
+	},
 ];
 
 export const testimonials = [
+	{
+		imageUrl: danProfileImage,
+		title: "Team Leader, Fast Learner, Joyous to work with",
+		testimonial:
+			"Lorem ipsum dolor sit amet consectetur. Turpis at auctor nisl commodo sit. Elementum fermentum ultrices ac nisl volutpat libero laoreet massa etiam. Pharetra pellentesque lectus a in ipsum sodales.",
+		author: "Daniel Forsthofer - Tutto food Co.",
+	},
+	{
+		imageUrl: danProfileImage,
+		title: "Team Leader, Fast Learner, Joyous to work with",
+		testimonial:
+			"Lorem ipsum dolor sit amet consectetur. Turpis at auctor nisl commodo sit. Elementum fermentum ultrices ac nisl volutpat libero laoreet massa etiam. Pharetra pellentesque lectus a in ipsum sodales.",
+		author: "Daniel Forsthofer - Tutto food Co.",
+	},
 	{
 		imageUrl: danProfileImage,
 		title: "Team Leader, Fast Learner, Joyous to work with",

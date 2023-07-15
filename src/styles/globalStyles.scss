@@ -1,3 +1,12 @@
+//variables:
+$primary-colour: #02549d;
+$secondary-colour: #eda47f;
+$text-colour: #333;
+
+$heading-font: "Playfair Display", serif;
+$body-font: Montserrat;
+
+//Global styles:
 *,
 *::before,
 *::after {
@@ -8,27 +17,28 @@
 
 html {
 	font-size: 62.5%;
-	color: #333;
+	scroll-behavior: smooth;
+	// scroll-margin-top: -10vh;
 }
 
 h1,
 h2,
 h3,
 h4 {
-	font-family: "Playfair Display", serif;
+	font-family: $heading-font;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.04rem;
+	color: $text-colour;
 }
 
 h1 {
 	font-size: 2.4rem;
 	font-weight: 700;
 	letter-spacing: 0.048rem;
-	color: #02549d;
+	color: $primary-colour;
 }
 h2 {
-	font-family: Playfair Display;
 	font-size: 2rem;
 	letter-spacing: 0.04rem;
 }
@@ -40,17 +50,42 @@ h4 {
 }
 
 p {
-	font-family: Montserrat;
+	font-family: $body-font;
 	font-size: 1.2rem;
 	font-weight: 300;
 	text-align: center;
+	color: $text-colour;
 }
 ul {
 	list-style: none;
 }
 a {
+	font-family: $body-font;
+	font-size: 1.2rem;
 	text-decoration: none;
 	text-align: center;
-	font-size: 1.2rem;
-	color: #333;
+	color: $text-colour;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 1200px) {
+	h1 {
+		font-size: 4.8rem;
+	}
+	h2 {
+		font-size: 4rem;
+	}
+	h3 {
+		font-size: 2.8rem;
+	}
+	h4 {
+		font-size: 2rem;
+	}
+	p {
+		font-size: 1.6rem;
+		text-align: left;
+	}
+	a {
+		font-size: 1.6rem;
+	}
 }

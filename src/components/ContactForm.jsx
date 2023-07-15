@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+//data
+import { colours } from "../styles/styleVariables";
+
 const ContactForm = () => {
 	return (
 		<Form name="contact-form" method="POST" data-netlify="true">
-			<label for="name">
+			<label htmlFor="name">
 				<input type="text" id="name" name="name" placeholder="Name" required />
 			</label>
-			<label for="email">
+			<label htmlFor="email">
 				<input
 					type="email"
 					id="email"
@@ -16,10 +19,10 @@ const ContactForm = () => {
 					required
 				/>
 			</label>
-			<label for="tel">
+			<label htmlFor="tel">
 				<input type="tel" id="tel" name="tel" placeholder="Contact Number" />
 			</label>
-			<label for="message">
+			<label htmlFor="message">
 				<textarea name="message" id="message" placeholder="Message"></textarea>
 			</label>
 			<input type="submit" value="Get In Touch" contentEditable="true" />
@@ -45,7 +48,7 @@ const Form = styled.form`
 		padding: 0.4rem 1.6rem;
 
 		:focus {
-			outline-color: #02549d;
+			outline-color: ${colours.primaryColour};
 		}
 	}
 
@@ -56,8 +59,24 @@ const Form = styled.form`
 	input[type="submit"] {
 		width: max-content;
 		margin: auto;
-		color: white;
-		background-color: #02549d;
+		color: ${colours.white};
+		background-color: ${colours.primaryColour};
+		border: 0.1rem solid ${colours.white};
+	}
+	@media screen and (min-width: 1200px) {
+		width: 100%;
+		gap: 2.4rem;
+
+		input,
+		textarea {
+			font-size: 1.6rem;
+			border-radius: 1.6rem;
+			padding: 0.8rem 1.6rem;
+		}
+
+		input[type="submit"] {
+			width: 100%;
+		}
 	}
 `;
 

@@ -1,6 +1,5 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_178_5443)">
-<rect width="24" height="24" fill="white"/>
 <path d="M15.75 0L22.98 11.4828C23.1852 11.8088 23.185 12.2237 22.9793 12.5495L15.75 24" stroke="black" stroke-width="2" stroke-linecap="round"/>
 <path d="M8.02424 0L0.794279 11.4828C0.589018 11.8088 0.589273 12.2237 0.794936 12.5495L8.02424 24" stroke="black" stroke-width="2" stroke-linecap="round"/>
 <circle cx="1.125" cy="1.125" r="1.125" transform="matrix(-1 0 0 1 9.37502 10.875)" fill="black"/>
