@@ -12,7 +12,7 @@ const Footer = ({ isMobile }) => {
 	return (
 		<StyledFooter>
 			<LayoutColumn gap="1.6rem">
-				{isMobile && <SocialIconList />}
+				<SocialIconList />
 				<LayoutColumn gap="0.4rem" align="center">
 					<small>@2023 Etienne Desfontaines - all rights reserved.</small>
 					<a href="">Privacy Policy</a>
@@ -24,8 +24,9 @@ const Footer = ({ isMobile }) => {
 };
 
 const StyledFooter = styled.div`
-	padding: 1.6rem 0.8rem;
-	margin-top: 1.6rem;
+	padding: 2.4rem 0.8rem;
+	background-color: rgba(220, 233, 251, 0.2);
+
 	small {
 		font-family: ${fonts.bodyFont};
 	}
@@ -33,10 +34,24 @@ const StyledFooter = styled.div`
 		font-size: 0.8rem;
 	}
 
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: 460px) {
+		small,
+		a {
+			font-size: 1rem;
+		}
+	}
+
+	@media screen and (min-width: 800px) {
 		a,
 		small {
 			font-size: 1.2rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) and (orientation: landscape) {
+		a,
+		small {
+			font-size: 1rem;
 		}
 	}
 `;
