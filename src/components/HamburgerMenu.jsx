@@ -105,9 +105,9 @@ const HamburgerMenu = ({
 const NavLinks = styled.ul`
 	position: absolute;
 	inset: 0;
+	width: 100%;
 	height: 90vh;
 	padding: 1.6rem 0.8rem;
-	padding: 0 0.8rem;
 	background-color: ${colours.white};
 	transform: translateX(
 		${(props) => (props.burgerMenuIsActive ? "0" : "-100%")}
@@ -130,6 +130,23 @@ const NavLinks = styled.ul`
 	}
 	.line--active {
 		background-color: ${colours.secondaryColour};
+	}
+
+	@media screen and (min-width: 460px) {
+		a {
+			font-size: 2rem;
+		}
+	}
+	@media screen and (min-width: 800px) {
+		li {
+			padding: 2.4rem 0rem;
+		}
+		a {
+			font-size: 2.2rem;
+		}
+		.line {
+			margin-top: 0.8rem;
+		}
 	}
 `;
 

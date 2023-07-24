@@ -21,24 +21,26 @@ import Footer from "./components/Footer";
 import { projects, testimonials } from "./portfolioDatabase";
 //images
 import chevronDown from "./icons/chevron-down.svg";
-import profileImage from "./images/profile_2.jpg";
+import etienneDesfontainesProfile from "./images/people/etienne-desfontaines-profile.jpg";
 
 //styles:
 import "./styles/globalStyles.scss";
 import LayoutRow from "./components/LayoutRow";
 
 function App() {
-	//state
-	const [isMobile, setIsMobile] = useState(
-		window.matchMedia("(max-width: 767px)").matches
-	);
+	//variables
+	let isPortrait = window.matchMedia("(orientation: portrait)").matches;
+	let isSmallScreen = window.matchMedia("(max-width: 1023px)").matches;
 
+	//state
+	const [isMobile, setIsMobile] = useState(isPortrait || isSmallScreen);
 	const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
 
 	useEffect(() => {
-		const mediaQuery = window.matchMedia("(max-width: 767px)");
 		const handleResize = () => {
-			setIsMobile(mediaQuery.matches);
+			isPortrait = window.matchMedia("(orientation: portrait)").matches;
+			isSmallScreen = window.matchMedia("(max-width: 1023px)").matches;
+			setIsMobile(isPortrait || isSmallScreen);
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -65,9 +67,21 @@ function App() {
 									subTitle="Frontend Developer"
 									noMargin
 								/>
-								<Image imageSrc={profileImage} altText="#" />
-								<CallToAction />
-								<img src={chevronDown} alt="chevron pointing down" />
+								<div className="container">
+									<Image
+										imageSrc={etienneDesfontainesProfile}
+										altText="#"
+										frameImage
+										objectFit="cover"
+										objectPosition="center top"
+									/>
+									<CallToAction />
+								</div>
+								<img
+									className="chevron--down"
+									src={chevronDown}
+									alt="chevron pointing down"
+								/>
 							</LayoutColumn>
 						</Section>
 
@@ -76,19 +90,20 @@ function App() {
 								<Header title="Hello World" hTag="h2" />
 
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-									voluptatibus et obcaecati, id aut, ex alias, magnam cupiditate
-									eum quia accusantium neque quis iusto sint necessitatibus
-									veniam voluptates reiciendis.Quasi exercitationem quibusdam
-									similique culpa veniam adipisci eveniet neque incidunt
-									repellendus a.
+									"I'm a London based Front-End Developer with a strong drive
+									for continuous learning and self-improvement. Through two
+									years of self-guided study, I've cultivated skills in web
+									development, UI design and copywriting. I enjoy playful
+									illustrations, language, animation, and bringing beautiful
+									designs to life with code.
 								</p>
 								<p>
-									Voluptates vel aliquam quisquam, quasi, tenetur veritatis
-									provident dignissimos rerum temporibus omnis dolorem
-									voluptatibus tempora sunt tempore atque illum totam quae
-									reiciendis officiis? Quasi exercitationem quibusdam similique
-									culpa veniam adipisci eveniet neque incidunt repellendus a.
+									Driven by my passion for human behaviour, health, and
+									environmental sustainability, I want to contribute to
+									technology that has a positive impact on the world. I'm eager
+									to join a company whose focus aligns with my values, where I
+									can learn and grow, whilst making a significant and meaningful
+									contribution to the lives of others."
 								</p>
 								<SocialIconList />
 							</LayoutColumn>
@@ -96,37 +111,45 @@ function App() {
 					</>
 				) : (
 					<Section id="about" isFullScreen>
-						<LayoutRow height="100%" gap="6.4rem">
+						<LayoutRow height="100%" gap="2.4%">
 							<LayoutColumn
 								align="flex-start"
-								justify="space-between"
-								maxWidth="60%"
+								justify="space-evenly"
+								maxWidth="56%"
 							>
 								<Header
 									title="Etienne Desfontaines"
 									subTitle="Frontend Developer"
 									noMargin
 								/>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-									voluptatibus et obcaecati, id aut, ex alias, magnam cupiditate
-									eum quia accusantium neque quis iusto sint necessitatibus
-									veniam voluptates reiciendis.Quasi exercitationem quibusdam
-									similique culpa veniam adipisci eveniet neque incidunt
-									repellendus a.
+
+								<p className="biography">
+									"I'm a London based Front-End Developer with a strong drive
+									for continuous learning and self-improvement. Through two
+									years of self-guided study, I've cultivated skills in web
+									development, UI design and copywriting. I enjoy playful
+									illustrations, language, animation, and bringing beautiful
+									designs to life with code.
 								</p>
-								<p>
-									Voluptates vel aliquam quisquam, quasi, tenetur veritatis
-									provident dignissimos rerum temporibus omnis dolorem
-									voluptatibus tempora sunt tempore atque illum totam quae
-									reiciendis officiis? Quasi exercitationem quibusdam similique
-									culpa veniam adipisci eveniet neque incidunt repellendus a.
+								<p className="biography">
+									Driven by my passion for human behaviour, health, and
+									environmental sustainability, I want to contribute to
+									technology that has a positive impact on the world. I'm eager
+									to join a company whose focus aligns with my values, where I
+									can learn and grow, whilst making a significant and meaningful
+									contribution to the lives of others."
 								</p>
+
 								<SocialIconList />
 								<CallToAction />
 							</LayoutColumn>
-							<Image imageSrc={profileImage} altText="#" />
-							{/* <img src={chevronDown} alt="chevron pointing down" /> */}
+							<Image
+								imageSrc={etienneDesfontainesProfile}
+								altText="#"
+								frameImage
+								objectFit="cover"
+								objectPosition="center top"
+							/>
 						</LayoutRow>
 					</Section>
 				)}
@@ -142,7 +165,7 @@ function App() {
 					<LayoutColumn align="center" gap={isMobile ? "1.6rem" : "4.8rem"}>
 						<Header title="My Creations" hTag="h2" />
 						<ul>
-							<LayoutColumn gap={isMobile ? "1.6rem" : "4.8rem"}>
+							<LayoutColumn gap={isMobile ? "3.2rem" : "6.4rem"}>
 								{projects.map((project, index) => (
 									<li key={index}>
 										{isMobile ? (
@@ -151,6 +174,7 @@ function App() {
 												image={project.image}
 												description={project.description}
 												technologies={project.technologies}
+												roles={project.roles}
 												links={project.links}
 												key={project.title}
 											/>
@@ -160,6 +184,7 @@ function App() {
 												image={project.image}
 												description={project.description}
 												technologies={project.technologies}
+												roles={project.roles}
 												links={project.links}
 												swapOrder={(index + 1) % 2 === 0}
 												key={project.title}
@@ -178,13 +203,11 @@ function App() {
 						{isMobile ? (
 							<ContentCarousel />
 						) : (
-							<LayoutRow justify="space-between" gap="2.4rem">
-								{" "}
+							<LayoutRow justify="space-between" gap="2.4rem" width="100%">
 								{testimonials.map((testimonialObject, index) => (
 									<TestimonialCard
 										key={index}
 										imageSrc={testimonialObject.imageUrl}
-										imageWidth="16rem"
 										title={testimonialObject.title}
 										testimonial={testimonialObject.testimonial}
 										author={testimonialObject.author}
@@ -196,59 +219,17 @@ function App() {
 				</Section>
 
 				<Section id="contact">
-					<LayoutColumn align="center" gap={isMobile ? "1.6rem" : "4.8rem"}>
+					<LayoutColumn align="center" gap={isMobile ? "1.6rem" : "3.2rem"}>
 						<Header title="Get In Touch" hTag="h2"></Header>
-						{isMobile ? (
-							<>
-								<p>
-									Lorem ipsum dolor sit amet consectetur. Eu ipsum montes massa
-									dui tincidunt eget. Eget felis neque etiam senectus.
-									Consectetur eget cursus laoreet elementum vel est ut mauris.
-									Pellentesque interdum amet elementum sit semper viverra enim
-									libero vel est ut.
-								</p>
-								<p>
-									Lorem ipsum dolor sit amet consectetur. Eu ipsum montes massa
-									dui tincidunt eget. Eget felis neque etiam senectus.
-									Consectetur eget cursus laoreet elementum vel est ut mauris.
-									elementum sit semper viverra enim libero vel est ut.
-								</p>
-								<p>
-									Lorem ipsum dolor sit amet consectetur. Eu ipsum montes massa
-									dui tincidunt eget.
-								</p>
-								<ContactForm />
-							</>
-						) : (
-							<LayoutRow gap="2.4rem">
-								<LayoutColumn
-									align="flex-start"
-									justify="space-between"
-									gap="2.4rem"
-									maxWidth="50%"
-								>
-									<p>
-										Lorem ipsum dolor sit amet consectetur. Eu ipsum montes
-										massa dui tincidunt eget. Eget felis neque etiam senectus.
-										Consectetur eget cursus laoreet elementum vel est ut mauris.
-										Pellentesque interdum amet elementum sit semper viverra enim
-										libero vel est ut.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet consectetur. Eu ipsum montes
-										massa dui tincidunt eget. Eget felis neque etiam senectus.
-										Consectetur eget cursus laoreet elementum vel est ut mauris.
-										elementum sit semper viverra enim libero vel est ut.{" "}
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet consectetur. Eu ipsum montes
-										massa dui tincidunt eget.
-									</p>
-									<SocialIconList />
-								</LayoutColumn>
-								<ContactForm />
-							</LayoutRow>
-						)}
+
+						<p>
+							If you have any questions about me or my projects, or would like
+							to talk technology, psychology, sustainability or health and
+							wellness, don't hesitate to drop me a line. Thanks for stopping by
+							and I hope to hear from you soon!
+						</p>
+
+						<ContactForm isMobile={isMobile} />
 					</LayoutColumn>
 				</Section>
 			</main>

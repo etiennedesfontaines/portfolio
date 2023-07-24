@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import "./HamburgerIcon.scss";
+import { colours } from "../../styles/styleVariables";
 
 const HamburgerIcon = ({ burgerMenuIsActive, setBurgerMenuIsActive }) => {
 	return (
@@ -28,18 +29,27 @@ const HamburgerIcon = ({ burgerMenuIsActive, setBurgerMenuIsActive }) => {
 };
 
 const Hamburger = styled.div`
-	height: 2.4rem;
 	width: 2rem;
+	height: 2.4rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+
+	@media screen and (min-width: 460px) {
+		width: 2.4rem;
+		height: 2.8rem;
+	}
+	@media screen and (min-width: 600px) {
+		width: 2.8rem;
+		height: 3.2rem;
+	}
 `;
 
 const Bar = styled.div`
 	width: 100%;
 	height: 12.5%;
 	border-radius: 0.8rem;
-	background-color: black;
+	background-color: ${colours.textColour};
 `;
 
 export default HamburgerIcon;
