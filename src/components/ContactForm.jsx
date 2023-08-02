@@ -7,7 +7,7 @@ import LayoutColumn from "./LayoutColumn";
 
 const ContactForm = ({ isMobile }) => {
 	return (
-		<Form name="contact" method="POST" data-netlify="true">
+		<Form name="contact-form" method="POST" data-netlify="true" action="/">
 			<LayoutColumn gap={isMobile ? "2.4rem" : "3.2rem"}>
 				<label htmlFor="name">
 					<input
@@ -37,6 +37,7 @@ const ContactForm = ({ isMobile }) => {
 						placeholder="Message"
 					></textarea>
 				</label>
+				<input type="hidden" name="form-name" value="contact-form" />
 				<input type="submit" value="Get In Touch" />
 			</LayoutColumn>
 		</Form>
