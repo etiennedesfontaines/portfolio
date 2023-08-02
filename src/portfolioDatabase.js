@@ -109,9 +109,10 @@ export const projects = [
 		imageAltText:
 			"A memory-game website homepage. The background is a beautifully illustrated childs room. There are toys on the floor and a little girl drawing on the wall. The memory playing cards are dealt onto the wall. Two of them are face up, showing charming illustrations of animals.",
 		description:
-			"A charming, illustrated version of the classic memory-card game - pairs. Its adorable illustrations and engaging game screen will keep your children entertained for hours. And the different difficulty options make it a delightful experience for players of all ages. I intentionally excluded HTML to focus solely on JavaScript, helping me hone essential concepts such as event handling, DOM manipulation, randomisation, score keeping and game logic. Come immerse yourself in this nostalgic card game and put your recall abilities to the test!",
+			"A charming, illustrated version of the classic memory-card game - pairs. Its adorable illustrations and engaging game screen will keep your children entertained for hours. And the different difficulty options make it a delightful experience for players of all ages. I focused primarily on JavaScript, helping me hone essential concepts such as event handling, DOM manipulation, randomisation, score keeping and game logic. Come immerse yourself in this nostalgic card game and put your recall abilities to the test!",
 		roles: "UI Designer, Copywriter, Developer.",
 		technologies: [
+			{ iconImage: htmlIcon, name: "HTML5" },
 			{ iconImage: cssIcon, name: "CSS" },
 			{ iconImage: sassIcon, name: "Sass" },
 			{ iconImage: javascriptIcon, name: "Javascript" },
