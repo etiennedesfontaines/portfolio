@@ -43,6 +43,10 @@ const Hamburger = styled.div`
 		width: 2.8rem;
 		height: 3.2rem;
 	}
+	@media screen and (max-width: 1023px) and (max-height: 900px) and (orientation: landscape) {
+		width: 2rem;
+		height: 2.4rem;
+	}
 `;
 
 const Bar = styled.div`

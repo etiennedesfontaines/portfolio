@@ -32,6 +32,7 @@ const ProjectCardDesktop = ({
 						imageSrc={image}
 						altText={altText}
 						width="100%"
+						height="auto"
 						radius="1.6rem"
 					/>
 				</div>
@@ -66,11 +67,12 @@ const ProjectCardDesktop = ({
 const Card = styled.div`
 	padding: 2.4rem;
 	border-radius: 1.6rem;
-	background-color: rgba(220, 233, 251, 0.1);
+	background-color: rgba(220, 233, 251, 0.13);
 	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
 		0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
 
 	.project-image-container {
+		background-color: transparent;
 		width: 54%;
 		display: flex;
 		align-items: center;
