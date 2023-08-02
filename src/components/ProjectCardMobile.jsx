@@ -38,7 +38,7 @@ const ProjectCardMobile = ({
 						className="button"
 						href={links[0]}
 						target="_blank"
-						rel="noreferrer"
+						rel="noreferrer noopener"
 					>
 						Github
 					</a>
@@ -46,7 +46,7 @@ const ProjectCardMobile = ({
 						className="button"
 						href={links[1]}
 						target="_blank"
-						rel="noreferrer"
+						rel="noreferrer noopener"
 					>
 						Live Site
 					</a>
