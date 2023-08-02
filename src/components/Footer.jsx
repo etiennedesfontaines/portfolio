@@ -15,10 +15,10 @@ const Footer = ({ isMobile }) => {
 				<SocialIconList />
 				<LayoutColumn gap="0.4rem" align="center">
 					<small>@2023 Etienne Desfontaines - all rights reserved.</small>
-					<a href="#" target="_blank" rel="noreferrer">
+					<a href="#home" target="_blank" rel="noreferrer noopener">
 						Privacy Policy
 					</a>
-					<a href="#">Sitemap</a>
+					<a href="#home">Sitemap</a>
 				</LayoutColumn>
 			</LayoutColumn>
 		</StyledFooter>

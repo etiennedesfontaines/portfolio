@@ -14,7 +14,7 @@ const SocialIconList = () => {
 				{socialIcons.map((icon) => {
 					return (
 						<li key={icon.iconImage}>
-							<a href={icon.link} target="_blank" rel="noreferrer">
+							<a href={icon.link} target="_blank" rel="noreferrer noopener">
 								<img src={icon.iconImage} alt={icon.name} />
 							</a>
 						</li>
