@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { colours } from "../styles/styleVariables";
 
 const Wave = () => {
@@ -27,7 +27,6 @@ const StyledWave = styled.svg`
 	z-index: -1;
 	opacity: 0.3;
 	display: none;
-	/* display: none; */
 `;
 
 export default Wave;

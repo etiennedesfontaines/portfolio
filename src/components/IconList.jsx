@@ -13,7 +13,7 @@ const IconList = ({ icons, fillParent }) => {
 					return (
 						<li key={icon.name}>
 							<LayoutColumn align="center" gap="0.4rem">
-								<img src={icon.iconImage} />
+								<img src={icon.iconImage} alt="" />
 								<p className="icon-name">{icon.name}</p>
 							</LayoutColumn>
 						</li>

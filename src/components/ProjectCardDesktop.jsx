@@ -51,10 +51,10 @@ const ProjectCardDesktop = ({
 						<IconList icons={technologies} />
 					</div>
 					<LayoutRow justify="space-evenly" width="100%">
-						<a href={links[0]} target="_blank">
+						<a href={links[0]} target="_blank" rel="noreferrer">
 							Github
 						</a>
-						<a href={links[1]} target="_blank">
+						<a href={links[1]} target="_blank" rel="noreferrer">
 							Live Site
 						</a>
 					</LayoutRow>

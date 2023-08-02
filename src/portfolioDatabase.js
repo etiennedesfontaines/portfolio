@@ -13,7 +13,7 @@ import figmaIcon from "./icons/figma-icon.svg";
 import styledComponentsIcon from "./icons/styled-components-icon.svg";
 
 //Social Icons:
-import linkdInIcon from "./icons/linkdin-icon.svg";
+import linkedin from "./icons/linkdin-icon.svg";
 import gitHubIcon from "./icons/github-icon.svg";
 import exercismIcon from "./icons/exercism-icon.svg";
 import frontedMentoreIcon from "./icons/frontend-mentore-icon.svg";
@@ -54,19 +54,30 @@ export const skillIcons = [
 
 export const socialIcons = [
 	{
-		iconImage: linkdInIcon,
+		iconImage: linkedin,
 		link: "https://www.linkedin.com/in/etienne-desfontaines-818349284/",
+		name: "linkedin icon",
 	},
-	{ iconImage: gitHubIcon, link: "https://github.com/etiennedesfontaines" },
+	{
+		iconImage: gitHubIcon,
+		link: "https://github.com/etiennedesfontaines",
+		name: "github icon",
+	},
 	{
 		iconImage: exercismIcon,
 		link: "https://exercism.org/profiles/etiennedesfontaines",
+		name: "exercism icon",
 	},
 	{
 		iconImage: frontedMentoreIcon,
 		link: "https://www.frontendmentor.io/profile/etiennedesfontaines",
+		name: "front-end mentore icon",
 	},
-	{ iconImage: twitterIcon, link: "https://twitter.com/etdesfont" },
+	{
+		iconImage: twitterIcon,
+		link: "https://twitter.com/etdesfont",
+		name: "twitter icon",
+	},
 ];
 
 export const projects = [

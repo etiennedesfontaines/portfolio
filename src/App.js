@@ -1,5 +1,5 @@
 //Frameworks and Libraries
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 //components
 import NavBar from "./components/NavBar";
@@ -30,17 +30,23 @@ import LayoutRow from "./components/LayoutRow";
 
 function App() {
 	//variables
-	let isPortrait = window.matchMedia("(orientation: portrait)").matches;
-	let isSmallScreen = window.matchMedia("(max-width: 1023px)").matches;
+	const isPortrait = useRef(
+		window.matchMedia("(orientation: portrait)").matches
+	);
+	const isSmallScreen = useRef(
+		window.matchMedia("(max-width: 1023px)").matches
+	);
 	//state
-	const [isMobile, setIsMobile] = useState(isPortrait || isSmallScreen);
+	const [isMobile, setIsMobile] = useState(
+		isPortrait.current || isSmallScreen.current
+	);
 	const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
 
 	useEffect(() => {
 		const handleResize = () => {
-			isPortrait = window.matchMedia("(orientation: portrait)").matches;
-			isSmallScreen = window.matchMedia("(max-width: 1023px)").matches;
-			setIsMobile(isPortrait || isSmallScreen);
+			isPortrait.current = window.matchMedia("(orientation: portrait)").matches;
+			isSmallScreen.current = window.matchMedia("(max-width: 1023px)").matches;
+			setIsMobile(isPortrait.current || isSmallScreen.current);
 		};
 
 		window.addEventListener("resize", handleResize);
