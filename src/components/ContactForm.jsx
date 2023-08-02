@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 //data
-import { colours } from "../styles/styleVariables";
+// import { colours } from "../styles/styleVariables";
 import LayoutColumn from "./LayoutColumn";
 
 const ContactForm = ({ isMobile }) => {
