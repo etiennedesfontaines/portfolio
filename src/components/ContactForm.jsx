@@ -8,9 +8,9 @@ import LayoutColumn from "./LayoutColumn";
 const ContactForm = ({ isMobile }) => {
 	return (
 		<Form
-			name="contact-form"
+			name="contact"
 			method="POST"
-			data-netlify="true"
+			netlify
 			action="/"
 			netlify-honeypot="bot-field"
 		>
