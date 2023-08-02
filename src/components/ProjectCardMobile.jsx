@@ -34,10 +34,20 @@ const ProjectCardMobile = ({
 					<IconList icons={technologies} columns={columns} fillParent />
 				</div>
 				<LayoutRow justify="space-evenly" gap="2.4rem" width="100%">
-					<a className="button" href={links[0]} target="_blank">
+					<a
+						className="button"
+						href={links[0]}
+						target="_blank"
+						rel="noreferrer"
+					>
 						Github
 					</a>
-					<a className="button" href={links[1]} target="_blank">
+					<a
+						className="button"
+						href={links[1]}
+						target="_blank"
+						rel="noreferrer"
+					>
 						Live Site
 					</a>
 				</LayoutRow>
@@ -47,7 +57,6 @@ const ProjectCardMobile = ({
 };
 
 const ProjectCard = styled.div`
-	background-color: rgba(220, 233, 251, 0.2);
 	padding: 1.6rem 0rem;
 	border-radius: 0.8rem;
 	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12),

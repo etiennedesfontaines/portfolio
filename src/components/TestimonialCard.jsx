@@ -4,9 +4,6 @@ import styled from "styled-components";
 //components
 import LayoutColumn from "./LayoutColumn";
 
-//styles
-import { colours } from "../styles/styleVariables";
-
 const TestimonialCard = ({
 	isMoile,
 	imageSrc,
