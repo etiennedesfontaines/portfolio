@@ -14,6 +14,7 @@ const Image = ({
 }) => {
 	return (
 		<ImageContainer
+			className="image-container"
 			width={width}
 			minWidth={minWidth}
 			height={height}

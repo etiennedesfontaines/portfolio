@@ -148,6 +148,16 @@ const NavLinks = styled.ul`
 			margin-top: 0.8rem;
 		}
 	}
+	@media screen and (max-width: 1023px) and (max-height: 900px) and (orientation: landscape) {
+		padding: 1.6rem 0.8rem 0 0.8rem;
+		li {
+			padding: 1.6rem 0rem;
+		}
+
+		a {
+			font-size: 1.6rem;
+		}
+	}
 `;
 
 export default HamburgerMenu;

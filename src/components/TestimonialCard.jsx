@@ -23,7 +23,7 @@ const TestimonialCard = ({
 				gap="1.6rem"
 				height="100%"
 			>
-				<div className="test">
+				<div className="image-border">
 					<img
 						className="testimonial-image"
 						src={imageSrc}
@@ -48,10 +48,10 @@ const Card = styled.div`
 		max-height: 8rem;
 		border-radius: 100%;
 	}
-	.test {
+	.image-border {
 		border-radius: 100%;
 		padding: 0.8rem;
-		background-color: rgba(220, 233, 251, 0.3);
+		background-color: rgba(220, 233, 251, 0.4);
 	}
 	p {
 		text-align: center;

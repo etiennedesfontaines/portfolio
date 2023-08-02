@@ -3,6 +3,7 @@ export const colours = {
 	secondaryColour: "#eda47f",
 	textColour: "#333",
 	hovorColour: "#023f75",
+	highlightColour: "#dce9fb",
 	white: "#fff",
 };
 

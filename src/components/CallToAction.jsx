@@ -18,7 +18,7 @@ const CallToAction = () => {
 	};
 
 	return (
-		<CTA>
+		<CTA className="cta">
 			<a onClick={(e) => handleDocumentScroll(e, "#contact")} href="#contact">
 				Let's Talk!
 			</a>

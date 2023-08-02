@@ -1,5 +1,5 @@
 //Frameworks and Libraries
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 //components
 import NavBar from "./components/NavBar";
@@ -16,13 +16,14 @@ import TestimonialCard from "./components/TestimonialCard";
 import ContentCarousel from "./components/ContentCarousel/ContentCarousel";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+//
+import Wave from "./components/Wave";
 
 //Data
 import { projects, testimonials } from "./portfolioDatabase";
 //images
 import chevronDown from "./icons/chevron-down.svg";
 import etienneDesfontainesProfile from "./images/people/etienne-desfontaines-profile.jpg";
-
 //styles:
 import "./styles/globalStyles.scss";
 import LayoutRow from "./components/LayoutRow";
@@ -31,7 +32,6 @@ function App() {
 	//variables
 	let isPortrait = window.matchMedia("(orientation: portrait)").matches;
 	let isSmallScreen = window.matchMedia("(max-width: 1023px)").matches;
-
 	//state
 	const [isMobile, setIsMobile] = useState(isPortrait || isSmallScreen);
 	const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
@@ -49,6 +49,14 @@ function App() {
 			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
+
+	useEffect(() => {
+		if (burgerMenuIsActive) {
+			document.body.classList.add("no-scroll");
+		} else {
+			document.body.classList.remove("no-scroll");
+		}
+	}, [burgerMenuIsActive]);
 
 	return (
 		<>
@@ -70,7 +78,7 @@ function App() {
 								<div className="container">
 									<Image
 										imageSrc={etienneDesfontainesProfile}
-										altText="#"
+										altText="Confident frontend developer wearing gold-rimmed spectacles with calm, blue eyes, and a light blue collard shirt."
 										frameImage
 										objectFit="cover"
 										objectPosition="center top"
@@ -92,10 +100,10 @@ function App() {
 								<p>
 									"I'm a London based Front-End Developer with a strong drive
 									for continuous learning and self-improvement. Through two
-									years of self-guided study, I've cultivated skills in web
-									development, UI design and copywriting. I enjoy playful
-									illustrations, language, animation, and bringing beautiful
-									designs to life with code.
+									years of self-guided study, and a few freelance projects, I've
+									cultivated skills in web development, UI design and
+									copywriting. I enjoy playful illustrations, language,
+									animation, and bringing beautiful designs to life with code.
 								</p>
 								<p>
 									Driven by my passion for human behaviour, health, and
@@ -126,10 +134,10 @@ function App() {
 								<p className="biography">
 									"I'm a London based Front-End Developer with a strong drive
 									for continuous learning and self-improvement. Through two
-									years of self-guided study, I've cultivated skills in web
-									development, UI design and copywriting. I enjoy playful
-									illustrations, language, animation, and bringing beautiful
-									designs to life with code.
+									years of self-guided study, and a few freelance projects, I've
+									cultivated skills in web development, UI design and
+									copywriting. I enjoy playful illustrations, language,
+									animation, and bringing beautiful designs to life with code.
 								</p>
 								<p className="biography">
 									Driven by my passion for human behaviour, health, and
@@ -145,7 +153,7 @@ function App() {
 							</LayoutColumn>
 							<Image
 								imageSrc={etienneDesfontainesProfile}
-								altText="#"
+								altText="Confident frontend developer wearing gold-rimmed spectacles with calm, blue eyes, and a light blue collard shirt."
 								frameImage
 								objectFit="cover"
 								objectPosition="center top"
@@ -158,6 +166,7 @@ function App() {
 					<LayoutColumn align="center" gap={isMobile ? "1.6rem" : "4.8rem"}>
 						<Header title="Skills" hTag="h2" />
 						<Skills />
+						<Wave />
 					</LayoutColumn>
 				</Section>
 
@@ -165,13 +174,14 @@ function App() {
 					<LayoutColumn align="center" gap={isMobile ? "1.6rem" : "4.8rem"}>
 						<Header title="My Creations" hTag="h2" />
 						<ul>
-							<LayoutColumn gap={isMobile ? "3.2rem" : "6.4rem"}>
+							<LayoutColumn gap={isMobile ? "2.4rem" : "6.4rem"}>
 								{projects.map((project, index) => (
 									<li key={index}>
 										{isMobile ? (
 											<ProjectCardMobile
 												title={project.title}
 												image={project.image}
+												altText={project.imageAltText}
 												description={project.description}
 												technologies={project.technologies}
 												roles={project.roles}
@@ -182,6 +192,7 @@ function App() {
 											<ProjectCardDesktop
 												title={project.title}
 												image={project.image}
+												altText={project.imageAltText}
 												description={project.description}
 												technologies={project.technologies}
 												roles={project.roles}
@@ -208,6 +219,7 @@ function App() {
 									<TestimonialCard
 										key={index}
 										imageSrc={testimonialObject.imageUrl}
+										imageAltText={testimonialObject.imageAltText}
 										title={testimonialObject.title}
 										testimonial={testimonialObject.testimonial}
 										author={testimonialObject.author}

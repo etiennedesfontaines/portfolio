@@ -89,6 +89,11 @@ const StyledNavBar = styled.div`
 	@media screen and (min-width: 800px) {
 		padding: 0rem 12rem;
 	}
+	@media screen and (max-width: 1023px) and (max-height: 900px) and (orientation: landscape) {
+		.logo {
+			width: 2.8rem;
+		}
+	}
 `;
 
 const Nav = styled.nav`

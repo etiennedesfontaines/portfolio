@@ -30,8 +30,7 @@ const StyledSection = styled.div`
 		padding: 8rem 12rem;
 	}
 
-	//should this query be 1024 rather?
-	@media screen and (min-width: 996px) {
+	@media screen and (min-width: 1024px) {
 		padding: 12rem 16rem;
 	}
 
@@ -42,6 +41,14 @@ const StyledSection = styled.div`
 
 		&.section--is-full-screen {
 			padding: 10rem 6rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
+		padding: 5.6rem 1.6rem;
+
+		&.section--is-full-screen {
+			padding: 5.6rem 1.6rem;
 		}
 	}
 
