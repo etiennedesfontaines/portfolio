@@ -14,10 +14,8 @@ import ProjectCardMobile from "./components/ProjectCardMobile";
 import ProjectCardDesktop from "./components/ProjectCardDesktop";
 import TestimonialCard from "./components/TestimonialCard";
 import ContentCarousel from "./components/ContentCarousel/ContentCarousel";
-// import ContactForm from "./components/ContactForm";
+import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
-//
-import Wave from "./components/Wave";
 
 //Data
 import { projects, testimonials } from "./portfolioDatabase";
@@ -172,7 +170,6 @@ function App() {
 					<LayoutColumn align="center" gap={isMobile ? "1.6rem" : "4.8rem"}>
 						<Header title="Skills" hTag="h2" />
 						<Skills />
-						<Wave />
 					</LayoutColumn>
 				</Section>
 
@@ -246,8 +243,7 @@ function App() {
 							wellness, don't hesitate to drop me a line. Thanks for stopping by
 							and I hope to hear from you soon!
 						</p>
-
-						{/* <ContactForm isMobile={isMobile} /> */}
+						<ContactForm isMobile={isMobile} />
 					</LayoutColumn>
 				</Section>
 			</main>
