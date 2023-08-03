@@ -5,15 +5,11 @@ import styled from "styled-components";
 import { colours } from "../styles/styleVariables";
 import LayoutColumn from "./LayoutColumn";
 
+//netlify-honeypot="bot-field"
+
 const ContactForm = ({ isMobile }) => {
 	return (
-		<Form
-			name="contact"
-			method="POST"
-			netlify
-			action="/"
-			netlify-honeypot="bot-field"
-		>
+		<Form name="contact" method="POST" data-netlify="true">
 			<LayoutColumn gap={isMobile ? "2.4rem" : "3.2rem"}>
 				<label htmlFor="name">
 					<input
