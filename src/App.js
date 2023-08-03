@@ -14,7 +14,7 @@ import ProjectCardMobile from "./components/ProjectCardMobile";
 import ProjectCardDesktop from "./components/ProjectCardDesktop";
 import TestimonialCard from "./components/TestimonialCard";
 import ContentCarousel from "./components/ContentCarousel/ContentCarousel";
-import ContactForm from "./components/ContactForm";
+// import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 //
 import Wave from "./components/Wave";
