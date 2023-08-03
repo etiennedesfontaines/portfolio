@@ -247,7 +247,7 @@ function App() {
 							and I hope to hear from you soon!
 						</p>
 
-						<ContactForm isMobile={isMobile} />
+						{/* <ContactForm isMobile={isMobile} /> */}
 					</LayoutColumn>
 				</Section>
 			</main>

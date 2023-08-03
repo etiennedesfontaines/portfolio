@@ -40,7 +40,7 @@ const ContactForm = ({ isMobile }) => {
 					></textarea>
 				</label>
 				<input type="hidden" name="form-name" value="contact-form" />
-				<input type="submit" value="Get In Touch" />
+				<input type="submit" name="submit" value="Get In Touch" />
 			</LayoutColumn>
 		</Form>
 	);
