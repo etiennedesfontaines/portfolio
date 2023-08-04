@@ -8,10 +8,29 @@ import LayoutColumn from "./LayoutColumn";
 const ContactForm = ({ isMobile }) => {
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
-	const handleSubmit = (event) => {
-		if (!isSubmitted) {
-			event.preventDefault();
-			setIsSubmitted(true);
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		try {
+			const form = event.target;
+			const formData = new FormData(form);
+
+			// Replace 'your-form-endpoint' with your Netlify form submission endpoint
+			const response = await fetch(
+				"https://etiennedesfontaines.netlify.app/.netlify/functions/contact",
+				{
+					method: "POST",
+					body: formData,
+				}
+			);
+
+			if (response.ok) {
+				setIsSubmitted(true);
+			} else {
+				console.error("Form submission failed");
+				// You can handle error cases here, show an error message, etc.
+			}
+		} catch (error) {
+			console.error("Form submission error:", error);
 		}
 	};
 
