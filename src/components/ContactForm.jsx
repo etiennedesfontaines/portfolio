@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 //data
@@ -6,8 +6,21 @@ import { colours } from "../styles/styleVariables";
 import LayoutColumn from "./LayoutColumn";
 
 const ContactForm = ({ isMobile }) => {
+	const [isSubmitted, setIsSubmitted] = useState(false);
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		setIsSubmitted(true);
+	};
+
 	return (
-		<Form className="form" name="contact" method="POST" netlify="true">
+		<Form
+			onSubmit={handleSubmit}
+			name="contact"
+			method="POST"
+			netlify="true"
+			isSubmitted={isSubmitted}
+		>
 			<input type="hidden" name="form-name" value="contact" />
 			<LayoutColumn gap={isMobile ? "2.4rem" : "3.2rem"}>
 				<label htmlFor="name">
@@ -40,11 +53,25 @@ const ContactForm = ({ isMobile }) => {
 				</label>
 				<input type="submit" name="submit" value="Get In Touch" />
 			</LayoutColumn>
+
+			{isSubmitted && (
+				<div className="submission-successful">
+					<div>
+						<h3>Submission Successful!</h3>
+						<p>
+							Thank you for getting in touch. <br /> I will respond to your
+							enquiry shortly.
+						</p>
+						<p>Warmly, Etienne.</p>
+					</div>
+				</div>
+			)}
 		</Form>
 	);
 };
 
 const Form = styled.form`
+	position: relative;
 	width: 100%;
 
 	input,
@@ -59,6 +86,7 @@ const Form = styled.form`
 		padding: 0.4rem 1.6rem;
 		background-color: rgba(220, 233, 251, 0.1);
 		color: ${colours.textColour};
+		opacity: ${(props) => props.isSubmitted && "0"};
 		:focus {
 			outline-color: ${colours.primaryColour};
 		}
@@ -74,6 +102,34 @@ const Form = styled.form`
 		color: ${colours.white};
 		background-color: ${colours.primaryColour};
 		border: 0.1rem solid ${colours.white};
+	}
+
+	.submission-successful {
+		position: absolute;
+		inset: 0;
+		z-index: 100;
+		background-color: ${colours.white};
+		border-radius: 0.8rem;
+		box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+			0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+
+		div {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			background-color: rgba(220, 233, 251, 0.2);
+			border-radius: 0.8rem;
+
+			h3 {
+				margin-bottom: 1.2rem;
+			}
+			p + p {
+				margin-top: 1.2rem;
+			}
+		}
 	}
 
 	@media screen and (min-width: 360px) {
