@@ -14,7 +14,6 @@ const ContactForm = ({ isMobile }) => {
 			const form = event.target;
 			const formData = new FormData(form);
 
-			// Replace 'your-form-endpoint' with your Netlify form submission endpoint
 			const response = await fetch("/", {
 				method: "POST",
 				body: formData,
@@ -24,7 +23,6 @@ const ContactForm = ({ isMobile }) => {
 				setIsSubmitted(true);
 			} else {
 				console.error("Form submission failed");
-				// You can handle error cases here, show an error message, etc.
 			}
 		} catch (error) {
 			console.error("Form submission error:", error);
