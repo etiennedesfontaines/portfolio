@@ -9,8 +9,10 @@ const ContactForm = ({ isMobile }) => {
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
 	const handleSubmit = (event) => {
-		event.preventDefault();
-		setIsSubmitted(true);
+		if (!isSubmitted) {
+			event.preventDefault();
+			setIsSubmitted(true);
+		}
 	};
 
 	return (
