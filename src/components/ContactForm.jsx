@@ -15,13 +15,10 @@ const ContactForm = ({ isMobile }) => {
 			const formData = new FormData(form);
 
 			// Replace 'your-form-endpoint' with your Netlify form submission endpoint
-			const response = await fetch(
-				"https://etiennedesfontaines.netlify.app/.netlify/functions/contact",
-				{
-					method: "POST",
-					body: formData,
-				}
-			);
+			const response = await fetch("/", {
+				method: "POST",
+				body: formData,
+			});
 
 			if (response.ok) {
 				setIsSubmitted(true);
