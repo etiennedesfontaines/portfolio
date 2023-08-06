@@ -150,10 +150,11 @@ export const projects = [
 			"A minimalist web-based music player that allows you to enjoy a collection of handpicked songs through a simple and intuitive interface. The player showcases album covers, artist information, and song names. You can play, pause, and skip tracks, or seek specific parts of a song using the time control. I built it as a guided exercise in learning the fundamentals of React. While the project itself was a simple exercise, it helped me understand React syntax and gain insights into component based development. Jump in and chill-out to some chill-hop beats.",
 		roles: "Developer.",
 		technologies: [
-			{ iconImage: reactIcon, name: "React" },
-			{ iconImage: javascriptIcon, name: "Javascript" },
+			{ iconImage: htmlIcon, name: "HTML5" },
 			{ iconImage: cssIcon, name: "CSS" },
 			{ iconImage: sassIcon, name: "Sass" },
+			{ iconImage: reactIcon, name: "React" },
+			{ iconImage: javascriptIcon, name: "Javascript" },
 		],
 		links: [
 			"https://github.com/etiennedesfontaines/vibraSonic-music-player",
