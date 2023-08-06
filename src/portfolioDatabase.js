@@ -126,9 +126,10 @@ export const projects = [
 	{
 		title: "PalettePro",
 		image: paletteProImage,
-		imageAltText: "The user interface of a colour palette website.",
+		imageAltText:
+			"The user interface of a colour palette website. A colour palette is displayed. It showcases five colours, each displaying their unique hex code. The colors run vertically, each taking up an equally 5th of the frame. The bottom fifth of the frame contains controls for manipulating, saving and recalling colour palettes.",
 		description:
-			"A colour palette, showcasing five colours, each displaying their unique hex code. The colors run vertically, each taking up an equally 5th of the frame. The bottom fifth of the frame contains controls for manipulating, saving and recalling colour palettes.",
+			"Palette-Pro is a web based tool for designers and creatives to create colour palettes! With Palette-Pro, you can effortlessly generate, edit, and save stunning colour combinations for your projects. Embrace the creative process as you explore an array of harmonious hues, each presented with its corresponding hex code for easy integration. Seamlessly copy your chosen colours to your dashboard and watch your designs come to life.",
 		roles: "Developer",
 		technologies: [
 			{ iconImage: htmlIcon, name: "HTML5" },
