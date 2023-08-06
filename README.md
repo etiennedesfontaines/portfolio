@@ -1,149 +1,145 @@
-# Getting Started with Create React App
+# Memory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](./src/images/screenshot.jpg)
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+- [Project Links](#links)
+- [Development](#development)
+- [What I Learned](#what-i-learned)
+- [Issues](#issues)
+- [To Do](#to-do)
+- [Acknowledgments](#acknowledgments)
+- [Author](#etienne-desfontaines)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+My front-end development portfolio website, created to showcase my work, give prospective employers an insight into my skills, tell them a little about who I am as a person and offer them a way to get in touch with me.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### My Roles:
 
-### `npm test`
+- Designer
+- Copywriter
+- Developer
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Links
 
-### `npm run build`
+- [Live site](https://etiennedesfontaines.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As an exercise in practicing the fundamentals of React and learning styled components, I built this project with a focus on both.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Technologies Used:
 
-### `npm run eject`
+- HTML5
+- CSS3
+- Sass
+- JavaScript
+- Styled Components
+- React.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### My process
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I started with a pen and paper, breaking the design down into components and subcomponents, as best as I could recognize them. During this process I also attempted to define design patterns, such as repeated layouts, for which I could create utility components - LayoutRow.jsx and LayoutColumn.jsx seemed obvious choices.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### JSX and Styled Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+I decided to build a static version of the site prior to adding any functionality. So, starting at the top, with the "Navbar", and working my way down to the "Footer", I created and styled each component.
 
-## Learn More
+#### Functionality
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The simplicity of this single-page design required little functionality, so once the static site was built, my main task was to add state to data that, if changed, needed to reflect in the UI, add scroll functionality, Nav signifiers, and data submission handling for the contact form.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## What I learned
 
-### Code Splitting
+### React
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- hinking in React: UI component hierarchy, identifying where state is needed, unidirectional data flow.
 
-### Analyzing the Bundle Size
+- JSX
+- Components
+- Conditional Rendering
+- Dynamic Component Rendering
+- Events
+- Props and State
+- Virtual DOM
+- Hooks: useState, useEffect, useRef
+- Rendering lists and unique keys for list items
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Components
 
-### Making a Progressive Web App
+Creating components that are maintainable and easy to understand and use is more challenging than I initially believed. There were many instances in this build during which I had to go back and refactor because the components I had created were creating unnecessary complexity. If I were to do it over, I would make different choices, but I suppose that is the positive spin off of any build that has resulted in valuable lessons.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### React Libraries
 
-### Advanced Configuration
+- React Responsive Carousel
+- Framer Motion (Explored outside of the project, still to be implemented)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Styled Components
 
-### Deployment
+- Component styling
+- Global Styles
+- Props Interpolation
+- Conditional Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Other:
 
-### `npm run build` fails to minify
+- Intersection Observer
+- I recognized that different tools become more or less valuable based on the problem being solved. For instance, there are cases where styled components may provide value, while in others, Sass may be a better styling tool. In the case of this build, I decided to use both.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Issues
 
-//unused code snippets to refer to:
+### Nav Signigiers
 
-//1. NavSignifiers
+The navigation signifiers do not update correctly on certain screen sizes, especially when scrolling from the bottom to the top of the page. I used the Intersection Observer API to trigger state changes for the nav signifiers, but I encountered difficulties in finding a setting that works consistently on all screens. It may be necessary to explore alternative methods to achieve the desired behavior.
 
-// const [activeSection, setActiveSection] = useState(
-// isMobile ? "home" : "about"
-// );
-// const [navSignifiers, setNavSignifiers] = useState({
-// home: false,
-// about: false,
-// skills: false,
-// projects: false,
-// testimonials: false,
-// contact: false,
-// });
+### Reset Scroll
 
-    // //functions:
-    // const handleNavSignifierOnScroll = () => {
-    // 	const scrollPosition = window.scrollY + 100;
-    // 	const sections = [
-    // 		"home",
-    // 		"about",
-    // 		"skills",
-    // 		"projects",
-    // 		"testimonials",
-    // 		"contact",
-    // 	];
+The project card description scroll does not reset on touch screen devices.
 
-    // 	const active = sections.find((section) => {
-    // 		const element = document.querySelector(`#${section}`);
+### Firefox
 
-    // 		if (element) {
-    // 			const { offsetTop, offsetHeight } = element;
-    // 			return (
-    // 				scrollPosition >= offsetTop &&
-    // 				scrollPosition < offsetTop + offsetHeight
-    // 			);
-    // 		}
-    // 		return false;
-    // 	});
+It seems there is an issue with the website's style on the Firefox browser, leading to content appearing squashed and unappealing. The problem is yet to be identified, but the website works perfectly on Chrome, Safari, and Firefox Developer Edition.
 
-    // 	setActiveSection(active);
+It have attempted to inspect the CSS properties and layout on Firefox using its developer tools to pinpoint the problem. It seems cross-browser compatibility can sometimes be challenging, and specific CSS rules or browser-specific behaviors may be causing the issue. I will need to investigate further.
 
-    // 	const updatedNaveSignifiers = sections.reduce((obj, section) => {
-    // 		obj[section] = section === active;
-    // 		return obj;
-    // 	}, {});
+### Layout Component Gap
 
-    // 	setNavSignifiers(updatedNaveSignifiers);
-    // };
+My choice to create and use LayoutComponents, and to define their flex-gap via props, resulted in me needing to programmatically change that gap value at different screen sizes (something I've not yet implemented), rather than doing it in my style declarations with the rest of the styling.
 
-//2. IsMobile change of width and orientation:
+This seems unnecessarily complex and messy to me, and I would rather not have my styling declarations spread between JavaScript and CSS (Styled Components) - I think it makes it challenging to read and difficult to maintain. Lesson learned.
 
-    useEffect(() => {
-    	const mediaQuery = window.matchMedia("(max-width: 767px)");
-    	const handleResize = () => {
-    		setIsMobile(mediaQuery.matches);
-    	};
+These were not the only components with which I suffered these complexities, which I created, but they are still unresolved.
 
-    	// const handleOrientationChange = () => {
-    	// 	// Delay the execution to allow time for the window dimensions to update
-    	// 	setTimeout(() => {
-    	// 		setIsMobile(
-    	// 			window.innerWidth <= 767 ||
-    	// 				(window.innerWidth > 767 && window.innerHeight <= 767)
-    	// 		);
-    	// 	}, 100);
-    	// };
+### Handle Document Scroll
 
-    	// Add the event listeners
-    	window.addEventListener("resize", handleResize);
-    	// window.addEventListener("orientationchange", handleOrientationChange);
-    	// Clean up the event listeners on component unmount
-    	return () => {
-    		window.removeEventListener("resize", handleResize);
-    		// window.removeEventListener("orientationchange", handleOrientationChange);
-    	};
-    }, []);
+My function to handle document scroll works well enough, but on certain screen sizes, it stops higher above the section content than I would like, poorly framing it. This is due to using padding, rather than margin, to increase spacing between sections. There were a number of reasons for this choice, some rooted in unimplemented design choices, some due to working around complexities I created in my components.
+
+I suppose I can either solve it with a good refactor, changing padding to margin, or with more nuanced programmatic control of my handleDocumentScroll function.
+
+## To Do
+
+### Animation
+
+- Title: H1 animates from #$%\*\*@#%# to Etienne Desfontaines
+- Project Cards: Even cards animate in from left, odd from right.
+- Testimonials(Desktop): All stacked center, top two cards animate off the stack (moving right and left respectively) to create a row layout.
+
+### Refactor:
+
+- Implement a naming convention for better readability and maintainability.
+- Remove unecessary repetition.
+- simplify components
+
+## Acknowledgments
+
+My Brother Emile Desfontaines for his continued encouragement and guidance along my development journey. And the development community for all the incredible documentation that makes self-learning possible.
+
+## Etienne Desfontaines
+
+- [Website](https://etiennedesfontaines.com/)
+- [Linkedin](https://www.linkedin.com/in/etienne-desfontaines-818349284/)
+- [Frontend Mentor](https://www.frontendmentor.io/profile/etiennedesfontaines)
+- [Exercism](https://exercism.io/profiles/etiennedesfontaines)
