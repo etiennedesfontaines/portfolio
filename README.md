@@ -56,7 +56,7 @@ The simplicity of this single-page design required little functionality, so once
 
 ### React
 
-- hinking in React: UI component hierarchy, identifying where state is needed, unidirectional data flow.
+- Thinking in React: UI component hierarchy, identifying where state is needed, unidirectional data flow.
 
 - JSX
 - Components
