@@ -103,11 +103,12 @@ function App() {
 
 								<p>
 									"I'm a London based Front-End Developer with a strong drive
-									for continuous learning and self-improvement. Through two
-									years of self-guided study I've cultivated skills in web
-									development, UI design and copywriting. I enjoy playful
-									illustrations, language, animation, and bringing beautiful
-									designs to life with code.
+									for continuous learning and self-improvement. Over the past
+									two years I've immersed myself in self-guided study, whilst
+									undertaking freelance projects, developing skills in HTML5,
+									CSS3, JavaScript, React.js, jQuery, Figma and UI design. I
+									enjoy playful illustrations, language, animation, and bringing
+									beautiful designs to life with code.
 								</p>
 								<p>
 									Driven by my passion for human behaviour, health, and
@@ -137,11 +138,12 @@ function App() {
 
 								<p className="biography">
 									"I'm a London based Front-End Developer with a strong drive
-									for continuous learning and self-improvement. Through two
-									years of self-guided study I've cultivated skills in web
-									development, UI design and copywriting. I enjoy playful
-									illustrations, language, animation, and bringing beautiful
-									designs to life with code.
+									for continuous learning and self-improvement. Over the past
+									two years I've immersed myself in self-guided study, whilst
+									undertaking freelance projects, developing skills in HTML5,
+									CSS3, JavaScript, React.js, jQuery, Figma and UI design. I
+									enjoy playful illustrations, language, animation, and bringing
+									beautiful designs to life with code.
 								</p>
 								<p className="biography">
 									Driven by my passion for human behaviour, health, and
