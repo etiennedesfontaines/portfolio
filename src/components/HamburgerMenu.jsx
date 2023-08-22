@@ -7,6 +7,9 @@ import LayoutColumn from "./LayoutColumn";
 //styles
 import { colours } from "../styles/styleVariables";
 
+//assets
+import Resume from "../resume/Desfontaines_Etienne_Resume.pdf";
+
 const HamburgerMenu = ({
 	burgerMenuIsActive,
 	setBurgerMenuIsActive,
@@ -96,6 +99,12 @@ const HamburgerMenu = ({
 							activeSection === "contact" ? "line line--active" : "line"
 						}
 					></div>
+				</li>
+				<li>
+					<a href={Resume} download>
+						Download My Résumé
+					</a>
+					<div className="line"></div>
 				</li>
 			</LayoutColumn>
 		</NavLinks>

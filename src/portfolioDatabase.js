@@ -32,24 +32,25 @@ import emileDesfontainesProfile from "./images/people/emile-desfontaines-profile
 import kabeloAndBuntuProfile from "./images/people/kabelo-and-buntu-profile.jpg";
 
 export const skillIcons = [
+	{ iconImage: reactIcon, name: "React" },
+	{ iconImage: javascriptIcon, name: "Javascript" },
+	{ iconImage: jQueryIcon, name: "jQuery" },
+	{ iconImage: gitIcon, name: "Git" },
 	{ iconImage: htmlIcon, name: "HTML5" },
 	{ iconImage: cssIcon, name: "CSS" },
-	{ iconImage: javascriptIcon, name: "Javascript" },
-	{ iconImage: reactIcon, name: "React" },
-	{ iconImage: gitIcon, name: "Git" },
-	{ iconImage: jQueryIcon, name: "jQuery" },
-	{ iconImage: cliIcon, name: "Cli" },
-	{
-		iconImage: framerMotionIcon,
-		name: "Framer Motion",
-	},
 	{ iconImage: sassIcon, name: "Sass" },
 	{ iconImage: apiIcon, name: "Api" },
-	{ iconImage: figmaIcon, name: "Figma" },
 	{
 		iconImage: styledComponentsIcon,
 		name: "Styled Components",
 	},
+	{
+		iconImage: framerMotionIcon,
+		name: "Framer Motion",
+	},
+	{ iconImage: cliIcon, name: "Cli" },
+
+	{ iconImage: figmaIcon, name: "Figma" },
 ];
 
 export const socialIcons = [

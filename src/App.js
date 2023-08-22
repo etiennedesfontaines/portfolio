@@ -105,9 +105,9 @@ function App() {
 									"I'm a London based Front-End Developer with a strong drive
 									for continuous learning and self-improvement. Over the past
 									two years I've immersed myself in self-guided study, whilst
-									undertaking freelance projects, developing skills in HTML5,
-									CSS3, JavaScript, React.js, jQuery, Figma and UI design. I
-									enjoy playful illustrations, language, animation, and bringing
+									undertaking freelance projects, developing skills in React.js,
+									JavaScript, jQuery, HTML5, CSS3, Figma and UI design. I enjoy
+									playful illustrations, language, animation, and bringing
 									beautiful designs to life with code.
 								</p>
 								<p>
@@ -140,9 +140,9 @@ function App() {
 									"I'm a London based Front-End Developer with a strong drive
 									for continuous learning and self-improvement. Over the past
 									two years I've immersed myself in self-guided study, whilst
-									undertaking freelance projects, developing skills in HTML5,
-									CSS3, JavaScript, React.js, jQuery, Figma and UI design. I
-									enjoy playful illustrations, language, animation, and bringing
+									undertaking freelance projects, developing skills in React.js,
+									JavaScript, jQuery, HTML5, CSS3, Figma and UI design. I enjoy
+									playful illustrations, language, animation, and bringing
 									beautiful designs to life with code.
 								</p>
 								<p className="biography">
