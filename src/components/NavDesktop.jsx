@@ -10,6 +10,9 @@ import { colours } from "../styles/styleVariables";
 //images
 import logo from "../logo/logo.svg";
 
+//Resume
+import Resume from "../resume/Desfontaines_Etienne_Resume.pdf";
+
 const NavDesktop = ({ activeSection }) => {
 	const handleDocumentScroll = (event, targetId) => {
 		event.preventDefault();
@@ -98,6 +101,12 @@ const NavDesktop = ({ activeSection }) => {
 								}
 							></div>
 						</li>
+						<li>
+							<a href={Resume} download>
+								Download My Résumé
+							</a>
+							<div className="line line--active--blue"></div>
+						</li>
 					</LayoutRow>
 				</ul>
 			</LayoutRow>
@@ -130,6 +139,10 @@ const StyledNav = styled.nav`
 	}
 	.line--active {
 		opacity: 1;
+	}
+	.line--active--blue {
+		opacity: 0.2;
+		background-color: ${colours.primaryColour};
 	}
 
 	@media screen and (min-width: 1200px) and (orientation: landscape) {
